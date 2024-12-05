@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import './styles/forms.css'
 
 function LoginForm() {
   const [firtName, setFirstName] = useState('')
@@ -11,31 +12,29 @@ function LoginForm() {
       firtName,
       lastName,
       email,
-      password,
-      role: 'admin'
+      password
     }
-    console.log(formData)
     return formData
   }  
   return (
-    <form onSubmit={submitLogin}>
-      <label>
+    <form className='forms-Fo' onSubmit={submitLogin}>
+      <label className='forms-FoLa'>
         <span>First Name</span>
-        <input className='forms-FLItext' type="text" value={firtName} onChange={e => setFirstName(e.target.value)}/>
+        <input type="text" value={firtName} onChange={e => setFirstName(e.target.value)}/>
       </label>
-      <label>
+      <label className='forms-FoLa'>
         <span>Last Name</span>
-        <input className='forms-FLItext' type="text" value={lastName} onChange={e => setLastName(e.target.value)}/>
+        <input type="text" value={lastName} onChange={e => setLastName(e.target.value)}/>
       </label>
-      <label>
+      <label className='forms-FoLa'>
         <span>Email</span>
-        <input className='forms-FLItext' type="email" value={email} onChange={e =>setEmail(e.target.value)}/>
+        <input type="email" value={email} onChange={e =>setEmail(e.target.value)}/>
       </label>
-      <label>
+      <label className='forms-FoLa'>
         <span>Password</span>
-        <input className='forms-FLItext' type="password" value={password} onChange={e =>setPassword(e.target.value)}/>
+        <input type="password" value={password} onChange={e =>setPassword(e.target.value)}/>
       </label>
-      <button type='submit'>Login</button>
+      <button className='forms-FoBu' type='submit'>Login</button>
     </form>
   )
 }
