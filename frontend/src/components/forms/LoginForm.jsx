@@ -1,42 +1,62 @@
-import {useState} from 'react'
-import './styles/forms.css'
+import { useState } from "react";
+import { Link } from "react-router";
+
+import "./styles/forms.css";
 
 function LoginForm() {
-  const [firtName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [firtName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const submitLogin = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const formData = {
       firtName,
       lastName,
       email,
-      password
-    }
-    return formData
-  }  
+      password,
+    };
+    return formData;
+  };
   return (
-    <form className='forms-Fo' onSubmit={submitLogin}>
-      <label className='forms-FoLa'>
+    <form className="forms-Fo" onSubmit={submitLogin}>
+      <label className="forms-FoLa">
         <span>First Name</span>
-        <input type="text" value={firtName} onChange={e => setFirstName(e.target.value)}/>
+        <input
+          type="text"
+          value={firtName}
+          onChange={(e) => setFirstName(e.target.value)}
+        />
       </label>
-      <label className='forms-FoLa'>
+      <label className="forms-FoLa">
         <span>Last Name</span>
-        <input type="text" value={lastName} onChange={e => setLastName(e.target.value)}/>
+        <input
+          type="text"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+        />
       </label>
-      <label className='forms-FoLa'>
+      <label className="forms-FoLa">
         <span>Email</span>
-        <input type="email" value={email} onChange={e =>setEmail(e.target.value)}/>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
       </label>
-      <label className='forms-FoLa'>
+      <label className="forms-FoLa">
         <span>Password</span>
-        <input type="password" value={password} onChange={e =>setPassword(e.target.value)}/>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
       </label>
-      <button className='forms-FoBu' type='submit'>Login</button>
+      <Link to={'/'}>
+        <button className="forms-FoBu" type="submit">Login</button>
+      </Link>
     </form>
-  )
+  );
 }
 
-export default LoginForm
+export default LoginForm;

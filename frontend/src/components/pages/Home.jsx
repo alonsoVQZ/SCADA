@@ -1,12 +1,16 @@
-
+import { Link } from "react-router";
 
 function Home() {
     return (
         <div>
-            <button>Login</button>
-            <button>Register</button>
+            <Link to='/auth/login'>
+                <button>Login</button>
+            </Link>
+            <Link to='/auth/register'>
+                <button>Register</button>
+            </Link>
         </div>
-    )
+    );
 }
 
-export default Home
+export default Home;

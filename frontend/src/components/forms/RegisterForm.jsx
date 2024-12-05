@@ -1,4 +1,6 @@
 import {useState} from 'react'
+import {Link} from 'react-router'
+
 import './styles/forms.css'
 
 function LoginForm() {
@@ -22,7 +24,9 @@ function LoginForm() {
         <span>Password</span>
         <input type="password" value={password} onChange={e =>setPassword(e.target.value)}/>
       </label>
-      <button className='forms-FoBu' type='submit'>Register</button>
+      <Link to={'/'}>
+        <button className='forms-FoBu' type='submit'>Register</button>
+      </Link>
     </form>
   )
 }
