@@ -1,14 +1,9 @@
 import { Link } from "react-router";
-
+import Header from '../layout/Header'
 function Home() {
     return (
         <div>
-            <Link to='/auth/login'>
-                <button>Login</button>
-            </Link>
-            <Link to='/auth/register'>
-                <button>Register</button>
-            </Link>
+            <Header/>
         </div>
     );
 }

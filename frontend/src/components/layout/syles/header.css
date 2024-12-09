@@ -1,0 +1,17 @@
+.header {
+  height: 80px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 300px 1fr 300px;
+}
+
+.header-Di {
+  padding: 5px;  
+}
+
+.header-Di3 {
+  padding-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end
+}

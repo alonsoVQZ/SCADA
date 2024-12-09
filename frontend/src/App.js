@@ -1,21 +1,25 @@
-import {Routes, Route} from 'react-router'
+import { BrowserRouter, Routes, Route } from 'react-router'
 
+import { AuthProvider } from './contexts/AuthContext'
 
 import './App.css'
 
 import Home from './components/pages/Home'
 import Auth from './components/pages/Auth'
-import LoginForm from './components/forms/LoginForm'
-import RegisterForm from './components/forms/RegisterForm'
+
 
 function App() {
   return (
-    <div className="App">
-      <Routes>
-        <Route index element={<Home/>}/>
-        <Route path='/auth/*' element={<Auth/>}/>
-      </Routes>
-    </div>
+    <AuthProvider>
+      <div className="App">
+        <BrowserRouter>
+          <Routes>
+            <Route index element={<Home/>}/>
+            <Route path='/auth/*' element={<Auth/>}/>
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </AuthProvider>
   );
 }
 

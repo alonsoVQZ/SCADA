@@ -2,14 +2,14 @@ import { useState } from 'react';
 import { Link } from 'react-router';
 
 import './styles/forms.css';
-import './styles/login-form.css'
+import './styles/register-form.css'
 
 function RegisterForm() {
   const [firtName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const submitLogin = (e) => {
+  const submitRegister = (e) => {
     e.preventDefault();
     const formData = {
       firtName,
@@ -20,7 +20,7 @@ function RegisterForm() {
     return formData;
   };
   return (
-    <form className='forms-Fo login-form-Fo' onSubmit={submitLogin}>
+    <form className='forms-Fo register-form-Fo' onSubmit={submitRegister}>
       <label className='forms-FoLa'>
         <span>First Name</span>
         <input
@@ -54,7 +54,7 @@ function RegisterForm() {
         />
       </label>
       <Link to={'/'}>
-        <button className="forms-FoBu" type='submit'>Login</button>
+        <button className="forms-FoBu" type='submit'>Register</button>
       </Link>
     </form>
   );
